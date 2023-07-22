@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Displaybooks from "./components/Displaybooks";
+import axios from "axios";
+import "./App.css";
 
 function App() {
+  const [books, setBooks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(["harry potter", "Sherlock Holmes"]);
+
+
+  useEffect(() => {
+    fetchBooks(searchQuery);
+  }, [searchQuery]);
+
+  const fetchBooks = async (query) => {
+    try {
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`
+      );
+      const booksData = response.data.items || [];
+      setBooks(booksData);
+    } catch (error) {
+      console.log(error);
+      setBooks([]); 
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar setBooks={setBooks} setSearchQuery={setSearchQuery} />
+      <Displaybooks books={books} searchQuery={searchQuery} />
     </div>
   );
 }
 
 export default App;
+

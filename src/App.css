@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #353333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #353333;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 3px 6px 0px rgb(44, 43, 43);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logotext h1 {
+    display: inline;
+    color: #FFFFFF;
 }
 
-.App-link {
-  color: #61dafb;
+.logotext p {
+    display: inline;
+    color: #948f8f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logoimg {
+    width: 70px;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+input {
+    margin-left: 8%;
+    width: 400px;
+    height: 30px;
+    background: none;
+    border: 1px solid rgb(70, 68, 68);
+    color: rgb(110, 109, 107);
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#search{
+    cursor: pointer;
+    margin: 7px;
+    padding: 8px;
+    background: none;
+    border: 1px solid rgb(70, 68, 68);
+    color: rgb(83, 81, 81);
+    margin-right: 15%;
+}
+
+.iconlist img {
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+.details p{
+    font-size: 10px;
+}
+.details {
+    width: 200px;
+    height: 170px;
+    overflow: auto; 
+    background-color: purple;
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.details::-webkit-scrollbar {
+    width: 5px;
+}
+
+.details::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.images img {
+    transform: rotate(-5deg);
+}
+
+.booksdiv {
+   
+    margin-left: 5%;
+    
+}
+
+.gridContainer {
+    position: fixed;
+    top: 12%;
+    left: 40px;
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #353333;
+    
+}
+.details h3{
+    font-size: 12px;
+    color:blue;
+}
+.gridBook {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.more{
+    
+    position: fixed;
+    top: 300px; 
+    color: #FFFFFF;
+    background-color: #353333;
+}
+
+.wrappedContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    margin-top: 28%;
+    
+}
+
+.wrappedBook {
+    max-width: 200px;
+    margin: 10px;
+}
+
+.wrappedBook .images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.buttons button{
+  background-color: black;
+  border-radius: 10px;
+  cursor: pointer;
+ color: bisque;
+ display: inline;
+ margin: 1px;
+    padding: 8px;
+       border: 1px solid rgb(70, 68, 68);
 }
